@@ -438,15 +438,17 @@
                 </label>
                 <label class="order-label">
                     <div class="terms-confirm">
-                        <input type="checkbox" class="order-checkbox">
-                        <p class="terms-confirm-text">Соглашаюсь с рассылкой и принимаю</p>
+                        <input type="checkbox" class="order-checkbox" required/>
+                        <span class="checkbox-icon"></span>
+                        <p class="terms-confirm-text">Соглашаюсь с рассылкой и принимаю&nbsp;</p>
                         <a class="terms-confirm-link" href="">Условия договора</a>
                     </div>
                 </label>
+                <button type="submit" class="order-button">Отправить</button>
             </form>
 
             <button type="button" class="modal-close" data-modal-close>
-                <svg>
+                <svg class="modal-close-icon">
                     <use href="./images/icons.svg#close" width=11px height=11px></use>
                 </svg>
             </button>
