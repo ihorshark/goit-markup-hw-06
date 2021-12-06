@@ -339,6 +339,11 @@ span {
   height: 18px;
 }
 
+.order-label:hover .modal-icon,
+.order-label:focus .modal-icon {
+  fill: var(--accent-color);
+}
+
 .order-feedback-input {
   width: 448px;
   height: 120px;
