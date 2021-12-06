@@ -225,6 +225,8 @@ span {
   margin-top: 30px;
 }
 
+/*--------------------BACKDROP--------------------*/
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -256,12 +258,36 @@ span {
   padding: 40px;
 
   background-color: var(--main-bgc);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  padding-left: 5px;
+  border-radius: 50%;
+  background-color: var(--main-bgc);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.modal-close:hover .modal-close-icon,
+.modal-close:focus .modal-close-icon {
+  fill: var(--accent-color);
 }
 
 .modal-title {
   margin-bottom: 12px;
 
   font-weight: 700;
+  font-style: normal;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
@@ -270,29 +296,15 @@ span {
   color: var(--primary-text-color);
 }
 
+/*--------------------FORM-ORDER--------------------*/
+
 .order {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .order-label {
-  margin-bottom: 10px;
-}
-
-.order-label:hover .modal-icon,
-.order-label:focus .modal-icon {
-  color: var(--accent-color);
-  fill: var(--accent-color);
-}
-
-.order-label:hover .order-text-input,
-.order-label:focus .order-text-input {
-  border: 1px solid var(--accent-color);
-}
-
-.order-text {
-  margin-bottom: 4px;
+  position: relative;
 
   font-weight: 400;
   font-size: 12px;
@@ -301,9 +313,61 @@ span {
   color: var(--secondary-text-color);
 }
 
-.terms-confirm {
+.order-text-input {
+  width: 448px;
+  height: 40px;
+  padding-left: 42px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+}
+
+.order-text-input:hover,
+.order-text-input:focus {
+  border-color: var(--accent-color);
+}
+
+.modal-icon {
+  position: absolute;
+  left: 12px;
+  bottom: 21px;
+  width: 18px;
+  height: 18px;
+}
+
+.order-feedback-input {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: none;
+
+  border-radius: 4px;
+  resize: none;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14p1, 17;
+  letter-spacing: 0.01em;
+}
+
+.checkbox {
   display: flex;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--secondary-text-color);
 }
 
 .order-checkbox {
@@ -335,13 +399,8 @@ span {
   background-origin: border-box;
 }
 
-.terms-confirm-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-
-  color: var(--secondary-text-color);
+.order-checkbox:focus + .checkbox-icon {
+  border-color: var(--accent-color);
 }
 
 .terms-confirm-link {
@@ -351,38 +410,8 @@ span {
   letter-spacing: 0.03em;
 }
 
-.modal-icon {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-
-  margin: 11px 12px;
-}
-
-.order-text-input {
-  width: 100%;
-  height: 40px;
-  padding-left: 42px;
-
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-
-.order-feedback-input {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-
-  border-radius: 4px;
-  resize: none;
-
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14p1, 17;
-  letter-spacing: 0.01em;
-
-  /* color: rgba(117, 117, 117, 0.5); */
+.terms-confirm-link:visited {
+  color: var(--accent-color);
 }
 
 .order-button {
@@ -403,25 +432,6 @@ span {
   letter-spacing: 0.06em;
 
   color: var(--third-text-color);
-}
-
-.modal-close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  width: 30px;
-  height: 30px;
-  padding: 9px;
-
-  border-radius: 50%;
-  background-color: var(--main-bgc);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.modal-close:hover .modal-close-icon,
-.modal-close:focus .modal-close-icon {
-  fill: var(--accent-color);
 }
 
 /*--------------------ADVANTAGE--------------------*/
@@ -495,6 +505,8 @@ span {
 
 .work-item {
   position: relative;
+  width: 370;
+  height: 294px;
 }
 
 .work-item:not(:last-child) {
@@ -746,8 +758,14 @@ span {
   margin-left: auto;
 }
 
-.subscribe-text {
-  margin-bottom: 20px;
+.subscribe-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.subscribe-label {
+  display: flex;
+  flex-direction: column;
 
   font-weight: 700;
   font-size: 14px;
@@ -756,13 +774,8 @@ span {
   color: var(--third-text-color);
 }
 
-.subscribe-container-mini {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .subscribe-input {
+  margin-top: 20px;
   width: 358px;
   height: 50px;
 
@@ -772,6 +785,7 @@ span {
   background-color: var(--additional-bgc);
 
   padding: 15px 16px;
+  outline: none;
 }
 
 .subscribe-button {
